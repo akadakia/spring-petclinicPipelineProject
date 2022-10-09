@@ -8,9 +8,9 @@ pipeline {
           echo 'Adding body in support of "dir" command'
         }
 
-        sh '''sudo apt update
+        sh '''apt update
 '''
-        sh 'sudo apt install default-jdk'
+        sh 'apt install default-jdk'
         sh './mvnw package'
         sh 'java -jar target/*.jar'
       }
