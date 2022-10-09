@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        tool 'openjdk-11'
+        tool 'openjdk-19'
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'Adding body in support of "dir" command'
