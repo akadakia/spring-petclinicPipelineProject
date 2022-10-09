@@ -3,14 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        tool 'openjdk-11'
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'Adding body in support of "dir" command'
         }
 
-        sh '''apt update
-'''
-        sh 'apt install default-jdk'
         sh './mvnw package'
         sh 'java -jar target/*.jar'
       }
