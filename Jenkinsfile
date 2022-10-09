@@ -5,7 +5,7 @@ pipeline {
       steps {
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
-          sh 'pwd'
+          echo 'Adding body in support of "dir" command'
         }
 
         sh './mvnw package'
