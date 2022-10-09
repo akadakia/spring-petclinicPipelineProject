@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
-        dir(path: 'spring-petclinicPipelineProject')
+        dir(path: '/home/ubuntu/spring-petclinicPipelineProject')
         sh './mvnw package'
         sh 'java -jar target/*.jar'
       }
