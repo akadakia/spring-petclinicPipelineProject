@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         tool 'openjdk-19'
+        tool 'mav'
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'Adding body in support of "dir" command'
@@ -22,7 +23,6 @@ pipeline {
 
     stage('Package') {
       steps {
-        tool 'mav'
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'adding body to dir step'
         }
