@@ -10,7 +10,7 @@ pipeline {
         }
 
         sh './mvnw package'
-        sh 'java -jar target/*.jar'
+        echo 'Build complete.'
       }
     }
 
