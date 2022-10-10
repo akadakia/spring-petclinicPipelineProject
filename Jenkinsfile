@@ -23,6 +23,7 @@ pipeline {
     stage('Package') {
       steps {
         tool 'mav'
+        dir(path: '/home/ubuntu/spring-petclinicPipelineProject')
         sh 'mvn install -DskipTests'
         sh 'docker build -f ./Dockerfile.cp -t spring/petclinic .'
         echo 'Completed packaging.'
