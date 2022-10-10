@@ -1,3 +1,69 @@
+**Problem Statement**
+
+Task: Build a Pipeline
+
+1. Use Spring pet-clinic (https://github.com/spring-projects/spring-petclinic) as your project source code
+
+2. Build a Jenkins pipeline with the following steps:
+
+a. Compile the code
+
+b. Run the tests
+
+c. Package the project as a runnable Docker image
+
+3. Make sure all dependencies are resolved from JCenter
+
+4. Bonus - use Frog Artifactory in your pipeline
+
+Deliverables:
+
+- GitHub link to the repo including
+
+o Jenkins file within that repo
+
+o Docker file within that repo
+
+o Readme.md file explaining the work and how to run the project
+
+- Attached runnable docker image + the command to run it
+
+**Solution:**
+
+1. I began by running the application on an AWS EC2 instance and performing all stages of the pipeline manually (not via pipeline)
+
+2. Successfully completed all tasks manually (compiling the code, running the tests, packaging the project as a runnable Docker image)
+
+a. Ensured all dependencies are installed and available (Java - JDK, Maven, Docker, etc)
+
+3. Now proceeding with Jenkins pipeline creation
+
+4. Installed Jenkins locally using [Homebrew ](https://brew.sh/)package manager
+
+a. <https://www.jenkins.io/doc/book/installing/macos/>
+
+b. Commands:
+
+ i. brew install jenkins-lts
+
+ ii. brew services start jenkins-lts
+
+c. After starting the Jenkins service, browsed to <http://localhost:8080> and followed the instructions to complete the installation and access my Jenkins portal
+
+5. Reviewed documentation for Jenkins and Jenkinsfile
+
+a. <https://www.jenkins.io/doc/book/pipeline/jenkinsfile/>
+
+6. Linked Jenkins to my Github repository
+
+7. Used Jenkins Blue to create the pipeline stages and steps and updates my Jenkinsfile
+
+8. Used Jenkins Global Tool Configuration to add tool for JDK and Maven
+
+To run docker:
+
+To run docker docker run -d --name petclinic -p 8080:8080 spring/petclinic
+
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic)
