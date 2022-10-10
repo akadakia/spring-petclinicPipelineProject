@@ -22,7 +22,9 @@ pipeline {
 
     stage('Package') {
       steps {
-        sh './mvnw spring-boot:build-image'
+        sh 'mvn install -DskipTests'
+        sh 'docker build -f ./Dockerfile.cp -t spring/petclinic .'
+        echo 'Completed packaging.'
       }
     }
 
