@@ -22,6 +22,7 @@ pipeline {
 
     stage('Package') {
       steps {
+        tool 'mav'
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'adding body to dir step'
         }
@@ -29,7 +30,6 @@ pipeline {
         sh 'mvn install -DskipTests'
         sh 'docker build -f ./Dockerfile.cp -t spring/petclinic .'
         echo 'Completed packaging.'
-        tool 'mav'
       }
     }
 
