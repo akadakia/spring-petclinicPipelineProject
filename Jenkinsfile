@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         tool 'openjdk-19'
-        tool 'mav'
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'Adding body in support of "dir" command'
@@ -30,6 +29,7 @@ pipeline {
         sh 'mvn install -DskipTests'
         sh 'docker build -f ./Dockerfile.cp -t spring/petclinic .'
         echo 'Completed packaging.'
+        tool 'mav'
       }
     }
 
