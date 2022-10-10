@@ -16,7 +16,9 @@ pipeline {
 
     stage('Test') {
       steps {
-        echo 'Test Test 123'
+        echo 'Tests in PetClinic Build Completed Successfully'
+        isUnix()
+        fileExists 'Dockerfile.cp'
       }
     }
 
