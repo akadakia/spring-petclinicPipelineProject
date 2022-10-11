@@ -26,7 +26,7 @@ pipeline {
 
     stage('Package') {
       steps {
-        tool 'mav'
+        tool 'MAVEN_TOOL'
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
           echo 'adding body to dir step'
         }
