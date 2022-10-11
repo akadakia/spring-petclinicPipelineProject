@@ -6,7 +6,7 @@ pipeline {
         tool 'openjdk-19'
         git(url: 'https://github.com/akadakia/spring-petclinicPipelineProject.git', branch: 'main')
         dir(path: '/home/ubuntu/spring-petclinicPipelineProject') {
-          echo 'Adding body in support of "dir" command'
+          echo 'Directory change complete'
         }
 
         sh './mvnw package'
@@ -18,7 +18,9 @@ pipeline {
       steps {
         echo 'Tests in PetClinic Build Completed Successfully'
         isUnix()
+        echo 'Test Successful'
         fileExists 'Dockerfile.cp'
+        echo 'Test Successful'
       }
     }
 
