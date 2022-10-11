@@ -52,7 +52,7 @@ GitHub link to the repo including:
 
 5. Reviewed documentation for Jenkins and Jenkinsfile
 
-a. <https://www.jenkins.io/doc/book/pipeline/jenkinsfile/>
+- <https://www.jenkins.io/doc/book/pipeline/jenkinsfile/>
 
 6. Linked Jenkins to my Github repository
 
