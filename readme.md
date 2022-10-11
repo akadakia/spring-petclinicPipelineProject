@@ -60,10 +60,32 @@ GitHub link to the repo including:
 
 8. Used Jenkins Global Tool Configuration to add tool for JDK and Maven
 
-To run docker image:
+Pipeline Stages and Steps:
 
+Build Stage:
+- Add tool for JDK
+- Pull Git Repository
+- Change Directory to petClinicPipelineProject
+- Shell script command: ./mvnw package
+- Print Message: Build Complete
+Test Stage:
+- Print Message: Tests in Build Stage completed successfully
+- Run a variety of tests specific to project
+- For example: Check if running on a Unix-like node AND Verify if Dockerfile exists in workspace
+Package Stage:
+- Add tool for Maven (mvn)
+- Change Directory to petClinicPipelineProject
+- Shell script: mvn install -Dskiptests
+- Shell script: docker build -f ./Dockerfile.cp -t spring/petclinic .
+- To save and extract image - Shell script: docker save --output springPC.tar spring/petclinic
+
+To load packaged image: 
+docker load --input springPC.tar
+
+To run docker image locally:
 docker run -d --name petclinic -p 8080:8080 spring/petclinic
 
+----------------------------------------------------------------------------------------------------
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic)
