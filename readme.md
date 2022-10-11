@@ -68,10 +68,12 @@ Build Stage:
 - Change Directory to petClinicPipelineProject
 - Shell script command: ./mvnw package
 - Print Message: Build Complete
+
 Test Stage:
 - Print Message: Tests in Build Stage completed successfully
 - Run a variety of tests specific to project
 - For example: Check if running on a Unix-like node AND Verify if Dockerfile exists in workspace
+
 Package Stage:
 - Add tool for Maven (mvn)
 - Change Directory to petClinicPipelineProject
