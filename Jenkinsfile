@@ -31,6 +31,7 @@ pipeline {
 
         sh 'mvn install -DskipTests'
         sh 'docker build -f ./Dockerfile.cp -t spring/petclinic .'
+        sh 'docker save --output springPC.tar spring/petclinic'
         echo 'Completed packaging.'
       }
     }
