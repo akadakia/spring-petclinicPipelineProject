@@ -6,11 +6,11 @@ Task: Build a Pipeline
 
 2. Build a Jenkins pipeline with the following steps:
 
-a. Compile the code
+- Compile the code
 
-b. Run the tests
+- Run the tests
 
-c. Package the project as a runnable Docker image
+- Package the project as a runnable Docker image
 
 3. Make sure all dependencies are resolved from JCenter
 
@@ -18,13 +18,13 @@ c. Package the project as a runnable Docker image
 
 Deliverables:
 
-- GitHub link to the repo including
+GitHub link to the repo including:
 
-o Jenkins file within that repo
+- Jenkins file within that repo
 
-o Docker file within that repo
+- Docker file within that repo
 
-o Readme.md file explaining the work and how to run the project
+- Readme.md file explaining the work and how to run the project
 
 - Attached runnable docker image + the command to run it
 
@@ -34,21 +34,21 @@ o Readme.md file explaining the work and how to run the project
 
 2. Successfully completed all tasks manually (compiling the code, running the tests, packaging the project as a runnable Docker image)
 
-a. Ensured all dependencies are installed and available (Java - JDK, Maven, Docker, etc)
+- Ensured all dependencies are installed and available (Java - JDK, Maven, Docker, etc)
 
 3. Now proceeding with Jenkins pipeline creation
 
 4. Installed Jenkins locally using [Homebrew ](https://brew.sh/)package manager
 
-a. <https://www.jenkins.io/doc/book/installing/macos/>
+- <https://www.jenkins.io/doc/book/installing/macos/>
 
-b. Commands:
+- Commands:
 
  i. brew install jenkins-lts
 
  ii. brew services start jenkins-lts
 
-c. After starting the Jenkins service, browsed to <http://localhost:8080> and followed the instructions to complete the installation and access my Jenkins portal
+- After starting the Jenkins service, browsed to <http://localhost:8080> and followed the instructions to complete the installation and access my Jenkins portal
 
 5. Reviewed documentation for Jenkins and Jenkinsfile
 
@@ -60,9 +60,9 @@ a. <https://www.jenkins.io/doc/book/pipeline/jenkinsfile/>
 
 8. Used Jenkins Global Tool Configuration to add tool for JDK and Maven
 
-To run docker:
+To run docker image:
 
-To run docker docker run -d --name petclinic -p 8080:8080 spring/petclinic
+docker run -d --name petclinic -p 8080:8080 spring/petclinic
 
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
